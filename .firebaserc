@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "REPLACE_WITH_FIREBASE_PROJECT_ID"
+    "default": "rmit-7cdfd"
   },
   "targets": {},
   "etags": {}
