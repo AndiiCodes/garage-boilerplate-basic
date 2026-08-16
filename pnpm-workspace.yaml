@@ -14,6 +14,13 @@ overrides:
   postcss: '^8.5.18'
   # next also bundles an old sharp (image optimization) — force the patched line.
   sharp: '^0.35.0'
+  # eslint > @eslint/eslintrc pins js-yaml <4.3.1, which has a quadratic-CPU
+  # advisory (CVE-2026-59870, GHSA-5p4m-2wfm-xmqj). Dev-only, but it fails the
+  # CI audit gate. 4.3.1 is a patch release — no API change.
+  js-yaml: '^4.3.1'
+  # next > postcss pins nanoid <3.3.18 (GHSA-2v37-7h3g-55p8, infinite loop on
+  # zero size). Stay on the 3.x line — 4.x is ESM-only and postcss needs CJS.
+  nanoid: '^3.3.18'
 
 allowBuilds:
   '@firebase/util': true
